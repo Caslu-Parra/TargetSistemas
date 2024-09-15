@@ -1,6 +1,8 @@
 ﻿using System.Globalization;
 using System.Text;
 using System.Text.Json;
+using System.Xml;
+using System.Xml.Serialization;
 using Exercicios.Data;
 
 namespace Exercicios
@@ -36,8 +38,24 @@ namespace Exercicios
 
                 case "03":
                 case "3":
-                    // Console.Clear();
-                    Console.WriteLine(Exercicio03());
+                    string mRet = string.Empty;
+
+                    Console.WriteLine("## Escolha a fonte de dados desejada: 1 - json ou 2 - xml");
+                    switch (Console.ReadLine().ToLower())
+                    {
+                        case "1":
+                        case "json":
+                            mRet = Exercicio03("json");
+                            break;
+                        case "2":
+                        case "xml":
+                            mRet = Exercicio03("xml");
+                            break;
+                        default:
+                            mRet = "Tratamento não implementado";
+                            break;
+                    }
+                    Console.WriteLine(mRet);
                     break;
 
                 default:
@@ -77,17 +95,25 @@ namespace Exercicios
             }
             return pertenceAoFibonacci;
         }
-        private static string Exercicio03()
+        private static string Exercicio03(string pTipoArq)
         {
             try
             {
                 var sb = new StringBuilder();
-                // Pega a raiz do projeto
-                var path = new DirectoryInfo(AppContext.BaseDirectory).Parent.Parent.Parent.FullName;
-                using (StreamReader reader = new StreamReader(Path.Combine(path, "MOCK_DATA.json")))
+                var arquivo = Path.Combine(new DirectoryInfo(AppContext.BaseDirectory).Parent.Parent.Parent.FullName, $"MOCK_DATA.{pTipoArq}");
+                using (StreamReader reader = new StreamReader(arquivo))
                 {
-                    string jsonContent = reader.ReadToEnd();
-                    var faturamentos = JsonSerializer.Deserialize<List<Faturamento>>(jsonContent);
+                    Faturamento[] faturamentos;
+                    if (arquivo.EndsWith("json"))
+                    {
+                        string jsonContent = reader.ReadToEnd();
+                        faturamentos = JsonSerializer.Deserialize<Faturamento[]>(jsonContent);
+                    }
+                    else
+                    {
+                        XmlSerializer serializer = new XmlSerializer(typeof(FaturamentoList));
+                        faturamentos = (serializer.Deserialize(reader) as FaturamentoList).Faturamentos;
+                    }
 
                     // Ignora finais de semana, agrupa dias repetidos depois agrupa por Ano / Mes.
                     var mesGroup = faturamentos.Where(f => f.Data.DayOfWeek != DayOfWeek.Saturday &&

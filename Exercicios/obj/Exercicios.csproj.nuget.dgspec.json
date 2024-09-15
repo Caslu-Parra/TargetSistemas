@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\Projetos\\TargetSistemas\\Exercicios\\Exercicios.csproj": {}
+    "d:\\Projetos\\TargetSistemas\\Exercicios\\Exercicios.csproj": {}
   },
   "projects": {
-    "D:\\Projetos\\TargetSistemas\\Exercicios\\Exercicios.csproj": {
+    "d:\\Projetos\\TargetSistemas\\Exercicios\\Exercicios.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Projetos\\TargetSistemas\\Exercicios\\Exercicios.csproj",
+        "projectUniqueName": "d:\\Projetos\\TargetSistemas\\Exercicios\\Exercicios.csproj",
         "projectName": "Exercicios",
-        "projectPath": "D:\\Projetos\\TargetSistemas\\Exercicios\\Exercicios.csproj",
+        "projectPath": "d:\\Projetos\\TargetSistemas\\Exercicios\\Exercicios.csproj",
         "packagesPath": "C:\\Users\\Lucas Parra\\.nuget\\packages\\",
-        "outputPath": "D:\\Projetos\\TargetSistemas\\Exercicios\\obj\\",
+        "outputPath": "d:\\Projetos\\TargetSistemas\\Exercicios\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Lucas Parra\\AppData\\Roaming\\NuGet\\NuGet.Config",

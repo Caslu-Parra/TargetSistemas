@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "Xxb378lsegQ=",
+  "dgSpecHash": "P5BWrPD+bzE=",
   "success": true,
-  "projectFilePath": "D:\\Projetos\\TargetSistemas\\Exercicios\\Exercicios.csproj",
+  "projectFilePath": "d:\\Projetos\\TargetSistemas\\Exercicios\\Exercicios.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Lucas Parra\\.nuget\\packages\\microsoft.netcore.app.ref\\6.0.31\\microsoft.netcore.app.ref.6.0.31.nupkg.sha512",
     "C:\\Users\\Lucas Parra\\.nuget\\packages\\microsoft.windowsdesktop.app.ref\\6.0.31\\microsoft.windowsdesktop.app.ref.6.0.31.nupkg.sha512",
