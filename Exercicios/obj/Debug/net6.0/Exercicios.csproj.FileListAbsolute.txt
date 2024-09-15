@@ -12,3 +12,18 @@ C:\Users\lucas.parra\OneDrive - Rolamentos CBF Ltda\Documentos\Projetos_Pessoais
 C:\Users\lucas.parra\OneDrive - Rolamentos CBF Ltda\Documentos\Projetos_Pessoais\TargetSistemas\Exercicios\obj\Debug\net6.0\Exercicios.pdb
 C:\Users\lucas.parra\OneDrive - Rolamentos CBF Ltda\Documentos\Projetos_Pessoais\TargetSistemas\Exercicios\obj\Debug\net6.0\Exercicios.genruntimeconfig.cache
 C:\Users\lucas.parra\OneDrive - Rolamentos CBF Ltda\Documentos\Projetos_Pessoais\TargetSistemas\Exercicios\obj\Debug\net6.0\ref\Exercicios.dll
+d:\Projetos\TargetSistemas\Exercicios\bin\Debug\net6.0\Exercicios.exe
+d:\Projetos\TargetSistemas\Exercicios\bin\Debug\net6.0\Exercicios.deps.json
+d:\Projetos\TargetSistemas\Exercicios\bin\Debug\net6.0\Exercicios.runtimeconfig.json
+d:\Projetos\TargetSistemas\Exercicios\bin\Debug\net6.0\Exercicios.dll
+d:\Projetos\TargetSistemas\Exercicios\bin\Debug\net6.0\Exercicios.pdb
+d:\Projetos\TargetSistemas\Exercicios\obj\Debug\net6.0\Exercicios.GeneratedMSBuildEditorConfig.editorconfig
+d:\Projetos\TargetSistemas\Exercicios\obj\Debug\net6.0\Exercicios.AssemblyInfoInputs.cache
+d:\Projetos\TargetSistemas\Exercicios\obj\Debug\net6.0\Exercicios.AssemblyInfo.cs
+d:\Projetos\TargetSistemas\Exercicios\obj\Debug\net6.0\Exercicios.csproj.CoreCompileInputs.cache
+d:\Projetos\TargetSistemas\Exercicios\obj\Debug\net6.0\Exercicios.sourcelink.json
+d:\Projetos\TargetSistemas\Exercicios\obj\Debug\net6.0\Exercicios.dll
+d:\Projetos\TargetSistemas\Exercicios\obj\Debug\net6.0\refint\Exercicios.dll
+d:\Projetos\TargetSistemas\Exercicios\obj\Debug\net6.0\Exercicios.pdb
+d:\Projetos\TargetSistemas\Exercicios\obj\Debug\net6.0\Exercicios.genruntimeconfig.cache
+d:\Projetos\TargetSistemas\Exercicios\obj\Debug\net6.0\ref\Exercicios.dll
