@@ -16,7 +16,9 @@ namespace Exercicios
 
             Console.WriteLine("- Exercicio 01 (Loop)" + Environment.NewLine +
                               "- Exercicio 02 (Fibonacci)" + Environment.NewLine +
-                              "- Exercicio 03 (Faturamento)" + Environment.NewLine);
+                              "- Exercicio 03 (Faturamento)" + Environment.NewLine +
+                              "- Exercicio 04 (Porcentagem)" + Environment.NewLine +
+                              "- Exercicio 05 (Inversor)" + Environment.NewLine);
 
             Console.Write("Exercicio selecionado: ");
             switch (Console.ReadLine())
@@ -69,6 +71,12 @@ namespace Exercicios
                        { "Outros", 19849.53m }
                     };
                     Console.WriteLine(Exercicio04(faturamentos));
+                    break;
+
+                case "05":
+                case "5":
+                    Console.Write("Informe um texto de entrada: ");
+                    Console.WriteLine(Exercicio05(Console.ReadLine()));
                     break;
                 default:
                     Console.WriteLine("Exercicio não encontrado...");
@@ -162,7 +170,6 @@ namespace Exercicios
             }
             catch (Exception ex) { return ex.Message; }
         }
-
         private static string Exercicio04(Dictionary<string, decimal> pFaturamentos)
         {
             decimal total = pFaturamentos.Sum(f => f.Value);
@@ -173,6 +180,13 @@ namespace Exercicios
                 decimal percentual = (f.Value / total) * 100;
                 return $"{f.Key}: {f.Value:C} ({percentual:F2}%)";
             }));
+            return sb.ToString();
+        }
+        private static string Exercicio05(string pTexto)
+        {
+            var sb = new StringBuilder($"Original: {pTexto}" + Environment.NewLine);
+            sb.Append("Invertido: ");
+            for (int i = pTexto.Length - 1; i > -1; i--) sb.Append(pTexto[i]);
             return sb.ToString();
         }
     }
