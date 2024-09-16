@@ -58,6 +58,18 @@ namespace Exercicios
                     Console.WriteLine(mRet);
                     break;
 
+                case "04":
+                case "4":
+                    var faturamentos = new Dictionary<string, decimal>
+                    {
+                       { "SP", 67836.43m },
+                       { "RJ", 36678.66m },
+                       { "MG", 29229.88m },
+                       { "ES", 27165.48m },
+                       { "Outros", 19849.53m }
+                    };
+                    Console.WriteLine(Exercicio04(faturamentos));
+                    break;
                 default:
                     Console.WriteLine("Exercicio não encontrado...");
                     break;
@@ -149,6 +161,19 @@ namespace Exercicios
                 return sb.ToString();
             }
             catch (Exception ex) { return ex.Message; }
+        }
+
+        private static string Exercicio04(Dictionary<string, decimal> pFaturamentos)
+        {
+            decimal total = pFaturamentos.Sum(f => f.Value);
+            var sb = new StringBuilder($"Total: {total:C}" + Environment.NewLine);
+
+            sb.AppendJoin(Environment.NewLine, pFaturamentos.Select(f =>
+            {
+                decimal percentual = (f.Value / total) * 100;
+                return $"{f.Key}: {f.Value:C} ({percentual:F2}%)";
+            }));
+            return sb.ToString();
         }
     }
 }
