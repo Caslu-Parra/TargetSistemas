@@ -11,58 +11,62 @@ namespace Exercicios
     {
         static void Main()
         {
-            Console.WriteLine("#### Teste técnico realizado por Lucas Parra - lucasparra2@outlook.com ####");
-            Console.WriteLine("## Para inicarmos, selecione o exercicio desejado:");
+            var sb = new StringBuilder();
+            sb.AppendJoin(Environment.NewLine, new[] {
+                "#### Teste técnico realizado por Lucas Parra - lucasparra2@outlook.com ####",
+                "## Selecione o exercicio desejado:",
+                "- Exercicio 01 (Loop)",
+                "- Exercicio 02 (Fibonacci)",
+                "- Exercicio 03 (Faturamento)",
+                "- Exercicio 04 (Porcentagem)",
+                "- Exercicio 05 (Inversor)",
+                "# Exercicio: "
+                });
 
-            Console.WriteLine("- Exercicio 01 (Loop)" + Environment.NewLine +
-                              "- Exercicio 02 (Fibonacci)" + Environment.NewLine +
-                              "- Exercicio 03 (Faturamento)" + Environment.NewLine +
-                              "- Exercicio 04 (Porcentagem)" + Environment.NewLine +
-                              "- Exercicio 05 (Inversor)" + Environment.NewLine);
-
-            Console.Write("Exercicio selecionado: ");
-            switch (Console.ReadLine())
+            while (true)
             {
-                case "01":
-                case "1":
-                    Console.Clear();
-                    Console.WriteLine(Environment.NewLine + Exercicio01());
-                    break;
+                Console.Write(sb);
 
-                case "02":
-                case "2":
-                    Console.Clear();
-                    Console.Write("# Informe um número: ");
+                switch (Console.ReadLine())
+                {
+                    case "01":
+                    case "1":
+                        Console.WriteLine(Environment.NewLine + Exercicio01());
+                        break;
 
-                    int num = Convert.ToInt32(Console.ReadLine() ?? "0");
-                    Console.WriteLine(Exercicio02(num) ? $"O número {num} pertence à sequência de Fibonacci." : $"O número {num} NÃO pertence à sequência de Fibonacci.");
-                    break;
+                    case "02":
+                    case "2":
+                        Console.Write(Environment.NewLine + "# Informe um número: ");
 
-                case "03":
-                case "3":
-                    string mRet = string.Empty;
+                        int num = Convert.ToInt32(Console.ReadLine() ?? "0");
+                        Console.WriteLine(Exercicio02(num) ? $"O número {num} pertence à sequência de Fibonacci." : $"O número {num} NÃO pertence à sequência de Fibonacci.");
+                        break;
 
-                    Console.WriteLine("## Escolha a fonte de dados desejada: 1 - json ou 2 - xml");
-                    switch (Console.ReadLine().ToLower())
-                    {
-                        case "1":
-                        case "json":
-                            mRet = Exercicio03("json");
-                            break;
-                        case "2":
-                        case "xml":
-                            mRet = Exercicio03("xml");
-                            break;
-                        default:
-                            mRet = "Tratamento não implementado";
-                            break;
-                    }
-                    Console.WriteLine(mRet);
-                    break;
+                    case "03":
+                    case "3":
+                        string mRet = string.Empty;
+                        Console.WriteLine(Environment.NewLine + "## Escolha a fonte de dados desejada: 1 - json ou 2 - xml");
+                        Console.Write("- Fonte: ");
+                        switch (Console.ReadLine())
+                        {
+                            case "1":
+                            case "json":
+                                mRet = Exercicio03("json");
+                                break;
+                            case "2":
+                            case "xml":
+                                mRet = Exercicio03("xml");
+                                break;
+                            default:
+                                mRet = "Tratamento não implementado";
+                                break;
+                        }
+                        Console.WriteLine(mRet);
+                        break;
 
-                case "04":
-                case "4":
-                    var faturamentos = new Dictionary<string, decimal>
+                    case "04":
+                    case "4":
+                        var faturamentos = new Dictionary<string, decimal>
                     {
                        { "SP", 67836.43m },
                        { "RJ", 36678.66m },
@@ -70,17 +74,23 @@ namespace Exercicios
                        { "ES", 27165.48m },
                        { "Outros", 19849.53m }
                     };
-                    Console.WriteLine(Exercicio04(faturamentos));
-                    break;
+                        Console.WriteLine(Environment.NewLine + Exercicio04(faturamentos));
+                        break;
 
-                case "05":
-                case "5":
-                    Console.Write("Informe um texto de entrada: ");
-                    Console.WriteLine(Exercicio05(Console.ReadLine()));
-                    break;
-                default:
-                    Console.WriteLine("Exercicio não encontrado...");
-                    break;
+                    case "05":
+                    case "5":
+                        Console.Write(Environment.NewLine + "Informe um texto de entrada: ");
+                        Console.WriteLine(Exercicio05(Console.ReadLine()));
+                        break;
+
+                    default:
+                        Console.WriteLine(Environment.NewLine + "Exercicio não encontrado...");
+                        break;
+                }
+
+                Console.Write("Pressione Enter para continuar ou ESC para encerrar...");
+                if (Console.ReadKey(false).Key == ConsoleKey.Escape) break;
+                Console.Clear();
             }
         }
         private static string Exercicio01()
